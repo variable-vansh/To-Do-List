@@ -1,0 +1,90 @@
+* {
+    margin: 0px;
+}
+
+.header {
+    width: 100vw;
+    height: 20vh;
+    background-color: #83B4FF;
+    display: flex;
+}
+
+.content {
+    width: 100vw;
+    height: 80vh;
+    background-color: white;
+}
+
+.logoSection {
+    height: 100%;
+    width: 50%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+}
+
+@font-face {
+    font-family: 'LogoTitleFont';
+    src: url(../fonts/TitleFont.ttf)
+}
+
+.logoImage {
+    padding-left: 50px;
+}
+
+.logoTitle {
+    font-family: "logoTitleFont", sans-serif;
+    font-size: 500%;
+    padding-left: 50px;
+}
+
+.newProjectSection {
+    height: 100%;
+    width: 50%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newProjectBox {
+    height: 75%;
+    /* width: 75%; */
+    width: 30%;
+    border-radius: 20px;
+    padding: 0px 50px;
+    /* background-color: red; */
+}
+
+.newProjectBox {
+    border: 3px dashed #000;
+    transition: border-color 1s ease;
+    transition: background-color 0.5s ease;
+    /* smooth transition */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.newProjectBox:hover {
+    border: 5px solid #0F67B1;
+    /* border-color: #f00; */
+    /* change border color on hover */
+    animation: move-dots 1s infinite;
+    background-color: #96C9F4;
+    transition: background-color 0.5s ease;
+    transition: border-color 0.25s ease;
+    /* start animation */
+}
+
+.addProjectImg {
+    height: 75%;
+}
+
+.newProjectText {
+    font-family: "logoTitleFont",
+        sans-serif;
+    font-size: 200%;
+}
