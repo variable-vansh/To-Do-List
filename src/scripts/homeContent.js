@@ -1,35 +1,41 @@
 import "../styles/homeContent.css"
 
-const content = document.createElement("div");
-content.classList.add("content");
-document.body.appendChild(content);
+function createHomeContent(content) {
 
-const priorityHigh = document.createElement("div");
-const priorityMid = document.createElement("div");
-const priorityLow = document.createElement("div");
+    // const content = document.createElement("div");
+    // content.classList.add("content");
+    // document.body.appendChild(content);
 
-priorityHigh.classList.add("priorityHigh", "priorityRow");
-priorityMid.classList.add("priorityMid", "priorityRow");
-priorityLow.classList.add("priorityLow", "priorityRow");
+    const priorityHigh = document.createElement("div");
+    const priorityMid = document.createElement("div");
+    const priorityLow = document.createElement("div");
 
-const priorityHighTitle = document.createElement("div");
-const priorityMidTitle = document.createElement("div");
-const priorityLowTitle = document.createElement("div");
+    priorityHigh.classList.add("priorityHigh", "priorityRow");
+    priorityMid.classList.add("priorityMid", "priorityRow");
+    priorityLow.classList.add("priorityLow", "priorityRow");
 
-priorityHighTitle.classList.add("priorityHighTitle", "priorityRowTitle");
-priorityMidTitle.classList.add("priorityMidTitle", "priorityRowTitle");
-priorityLowTitle.classList.add("priorityLowTitle", "priorityRowTitle");
+    const priorityHighTitle = document.createElement("div");
+    const priorityMidTitle = document.createElement("div");
+    const priorityLowTitle = document.createElement("div");
 
-priorityHighTitle.innerText = "Priority High"
-priorityMidTitle.innerText = "Priority Mid"
-priorityLowTitle.innerText = "Priority Low"
+    priorityHighTitle.classList.add("priorityHighTitle", "priorityRowTitle");
+    priorityMidTitle.classList.add("priorityMidTitle", "priorityRowTitle");
+    priorityLowTitle.classList.add("priorityLowTitle", "priorityRowTitle");
 
-content.appendChild(priorityHighTitle);
-content.appendChild(priorityMidTitle);
-content.appendChild(priorityLowTitle);
+    priorityHighTitle.innerText = "Priority High"
+    priorityMidTitle.innerText = "Priority Mid"
+    priorityLowTitle.innerText = "Priority Low"
 
-priorityHighTitle.appendChild(priorityHigh);
-priorityMidTitle.appendChild(priorityMid);
-priorityLowTitle.appendChild(priorityLow);
+    content.appendChild(priorityHighTitle);
+    content.appendChild(priorityMidTitle);
+    content.appendChild(priorityLowTitle);
+
+    priorityHighTitle.appendChild(priorityHigh);
+    priorityMidTitle.appendChild(priorityMid);
+    priorityLowTitle.appendChild(priorityLow);
+}
+
+
+export { createHomeContent };
 
 

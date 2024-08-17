@@ -1,0 +1,96 @@
+.projectContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+
+.projectInputBox {
+    height: 500px;
+    width: 500px;
+    background-color: #ffeee3;
+    border: 5px solid black;
+    border-radius: 30px;
+}
+
+.projectButtons {
+    display: flex;
+    flex-direction: column;
+}
+
+.projectButtons>button {
+    height: 80px;
+    width: 200px;
+
+    font-size: 30px;
+    font-family: "logoTitleFont", sans-serif;
+
+    margin: 40px 80px;
+    border-radius: 10px;
+
+    border: 5px solid black
+}
+
+
+.projectSaveBtn {
+    background-color: #83B4FF;
+}
+
+.projectSaveBtn:hover {
+    background-color: #b2d1FF;
+}
+
+.projectDiscardBtn {
+    background-color: #FFA8A8;
+}
+
+.projectDiscardBtn:hover {
+    background-color: #FFc8c8;
+}
+
+.projectInputBox {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 25px 0px; */
+    box-sizing: border-box;
+}
+
+.projectInputBox>input {
+    height: 10%;
+    width: 80%;
+    border-radius: 10px;
+
+    font-family: "logoTitleFont", sans-serif;
+    font-size: 20px;
+    text-align: center;
+
+    margin-top: 20px;
+}
+
+.radioInput {
+    font-family: "logoTitleFont", sans-serif;
+    font-size: 30px;
+}
+
+label {
+    padding-left: 10px;
+    /* Adds space to the left of the label */
+}
+
+.dueDateInput {
+    font-family: "logoTitleFont", sans-serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.dueDateInput>input {
+    border-radius: 7px;
+    font-size: 15px;
+    margin-left: 20px;
+    padding: 10px;
+    font-family: "logoTitleFont", sans-serif;
+}

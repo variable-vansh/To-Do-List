@@ -1,8 +1,22 @@
 //import style for home page
 // import "./styles/homeStyle.css"
 
-import { header } from "./scripts/homeHeader"
-import { content } from "./scripts/homeContent"
+import { createHeader } from "./scripts/homeHeader"
+import { createHomeContent } from "./scripts/homeContent"
+
+//create content element
+const content = document.createElement("div");
+content.classList.add("content");
+content.id = "content";
+
+//create header
+createHeader();
+
+//put the content after the header
+document.body.appendChild(content);
+
+//create Home page content
+createHomeContent(content);
 
 //creates tasks
 class Task {

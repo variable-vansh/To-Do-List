@@ -51,7 +51,7 @@
 }
 
 .newProjectBox {
-    border: 3px dashed #000;
+    border: 5px dashed #000;
     transition: border-color 1s ease;
     transition: background-color 0.5s ease;
     /* smooth transition */
@@ -63,15 +63,19 @@
 }
 
 .newProjectBox:hover {
-    border: 5px solid #0F67B1;
+    border: 5px solid #0041a6;
     /* border-color: #f00; */
     /* change border color on hover */
     animation: move-dots 1s infinite;
-    background-color: #96C9F4;
+    background-color: #267cff;
     transition: background-color 0.5s ease;
     transition: border-color 0.25s ease;
+    transition: color 0.25 ease;
+
+    color: white;
     /* start animation */
 }
+
 
 .addProjectImg {
     height: 75%;
