@@ -13,7 +13,12 @@ const logoImage = document.createElement("img")
 logoImage.classList.add("logoImage")
 //temporary thing, untill the img thing is fixed
 logoImage.src = "https://cdn-icons-png.flaticon.com/128/10549/10549812.png"
+
 // logoImage.src = "url(../images/logo.png)"
+
+//this doesn't work too
+// logoImage.setAttribute("src", "../images/logo.png")
+
 // logoImage.src = "https://cdn-icons-png.flaticon.com/128/4236/4236706.png"
 logoSection.appendChild(logoImage)
 

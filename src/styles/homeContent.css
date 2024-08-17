@@ -3,3 +3,59 @@
     width: 100px;
     background-color: black;
 }
+
+.content {
+    width: 100vw;
+    height: 80vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.priorityHigh {
+    background-color: #FFA8A8;
+}
+
+.priorityMid {
+    background-color: #F6FFA4;
+}
+
+.priorityLow {
+    background-color: #B6FFCE;
+}
+
+.priorityRow {
+    height: 90%;
+    width: 90%;
+    border-radius: 20px;
+    margin-right: 0.5%;
+}
+
+.priorityRowTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: black;
+    height: 30%;
+    width: 95%;
+    border-radius: 20px;
+
+    font-size: 40px;
+    font-family: "logoTitleFont", sans-serif;
+    padding-left: 30px;
+}
+
+.priorityHighTitle {
+    background-color: #ff4040;
+}
+
+.priorityMidTitle {
+    background-color: #ecff40;
+}
+
+.priorityLowTitle {
+    background-color: #40ff7f;
+}

@@ -9,12 +9,6 @@
     display: flex;
 }
 
-.content {
-    width: 100vw;
-    height: 80vh;
-    background-color: white;
-}
-
 .logoSection {
     height: 100%;
     width: 50%;
