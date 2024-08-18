@@ -1,5 +1,7 @@
 import { create } from "lodash";
 import "../styles/newProjectTab.css"
+import { createHomeContent } from "./homeContent.js"
+
 
 function newProjectInput() {
 
@@ -12,6 +14,7 @@ function newProjectInput() {
 function createProjectInputBox() {
     let projectContent = document.createElement("div");
     projectContent.classList.add("projectContent");
+    projectContent.id = "projectContent"
     document.body.appendChild(projectContent)
 
     let projectInputBox = document.createElement("div")
@@ -44,12 +47,11 @@ function createProjectInputBox() {
     //creates radio input for priority
     createPriorityInput(projectInputBox)
 
+    //creates date input for due date
     createDueDateInput(projectInputBox)
-    // let projectDeadLine = document.createElement("input")
 
-    // projectDeadLine.classList.add("projectDeadLine")
-
-    // projectInputBox.appendChild(projectDeadLine)
+    //make the discard button redirect to homeContent
+    projectDiscardBtn.addEventListener("click", redirectToHomeContent)
 }
 
 function createPriorityInput(projectInputBox) {
@@ -153,6 +155,22 @@ function createDueDateInput(projectInputBox) {
     dateInput.setAttribute("id", "dueDate")
     dueDateInput.appendChild(dateInput)
 
+}
+
+//removes whatever's on the page, insert content thing from homContent
+function redirectToHomeContent() {
+    let projectContent = document.getElementById("projectContent")
+    projectContent.remove()
+
+    //create content element
+    const content = document.createElement("div");
+    content.classList.add("content");
+    content.id = "content";
+
+    document.body.appendChild(content);
+
+    //create Home page content
+    createHomeContent(content);
 }
 
 export { newProjectInput }
