@@ -1,7 +1,12 @@
 import { create } from "lodash";
 import "../styles/newProjectTab.css"
 import { createHomeContent } from "./homeContent.js"
+import { createNewProject } from "./saveNewProject.js"
+import { makeCard } from "./createProjectCard.js";
+import { highPriorityProjectArray, midPriorityProjectsArray, lowPriorityProjectsArray } from "./saveNewProject.js"
 
+
+let projectName, projectPriority, projectDueDate;
 
 function newProjectInput() {
 
@@ -51,7 +56,28 @@ function createProjectInputBox() {
     createDueDateInput(projectInputBox)
 
     //make the discard button redirect to homeContent
-    projectDiscardBtn.addEventListener("click", redirectToHomeContent)
+    projectDiscardBtn.addEventListener("click", function () {
+        redirectToHomeContent()
+        loadSavedProjectCards()
+    })
+
+    //make save button do stuff
+    //save the three inputs and send them to saveNewProject.js to create new project
+    projectSaveBtn.addEventListener("click", function () {
+        //get input values to be sent over to create new project
+        projectName = document.querySelector('.projectNameInput').value;
+        projectDueDate = document.querySelector('.dateInput').value;
+
+        //create new project
+        createNewProject(projectName, projectPriority, projectDueDate);
+
+        //redirect to home content page
+        redirectToHomeContent()
+
+        //load saved project cards on the home content page
+        loadSavedProjectCards()
+
+    });
 }
 
 function createPriorityInput(projectInputBox) {
@@ -91,6 +117,11 @@ function createPriorityInput(projectInputBox) {
     priorityHighInput.setAttribute("id", "high")
     priorityMidInput.setAttribute("id", "mid")
     priorityLowInput.setAttribute("id", "low")
+
+    //event listener to each option that calls a function to store the chosen value
+    priorityHighInput.addEventListener('change', updatePriority);
+    priorityMidInput.addEventListener('change', updatePriority);
+    priorityLowInput.addEventListener('change', updatePriority);
 
     // Add the same name to all radio inputs
     const radioGroupName = "priority";
@@ -169,8 +200,47 @@ function redirectToHomeContent() {
 
     document.body.appendChild(content);
 
+
     //create Home page content
     createHomeContent(content);
+}
+
+//function stores the chosen radio input value
+function updatePriority(event) {
+    projectPriority = event.target.value;
+}
+
+function resetPriorityInput() {
+    const radioButtons = document.querySelectorAll('input[name="priority"]');
+    radioButtons.forEach(button => {
+        button.checked = false;
+    });
+    projectPriority = undefined; // Reset the global variable
+}
+
+function loadSavedProjectCards() {
+    let priorityHigh = document.getElementById("priorityHigh");
+    let priorityMid = document.getElementById("priorityMid");
+    let priorityLow = document.getElementById("priorityLow");
+
+    for (let project of highPriorityProjectArray) {
+        let projectCard = document.createElement("div");
+        projectCard.classList.add("projectCard");
+        priorityHigh.appendChild(projectCard)
+    }
+
+    for (let project of midPriorityProjectsArray) {
+        let projectCard = document.createElement("div");
+        projectCard.classList.add("projectCard");
+        priorityMid.appendChild(projectCard)
+    }
+
+    for (let project of lowPriorityProjectsArray) {
+        let projectCard = document.createElement("div");
+        projectCard.classList.add("projectCard");
+        priorityLow.appendChild(projectCard)
+    }
+
 }
 
 export { newProjectInput }

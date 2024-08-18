@@ -1,0 +1,12 @@
+.projectCard {
+    height: 90%;
+    width: 20%;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.priorityRow {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

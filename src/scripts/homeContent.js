@@ -1,18 +1,20 @@
 import "../styles/homeContent.css"
 
+let priorityHigh, priorityMid, priorityLow;
+
 function createHomeContent(content) {
 
-    // const content = document.createElement("div");
-    // content.classList.add("content");
-    // document.body.appendChild(content);
-
-    const priorityHigh = document.createElement("div");
-    const priorityMid = document.createElement("div");
-    const priorityLow = document.createElement("div");
+    priorityHigh = document.createElement("div");
+    priorityMid = document.createElement("div");
+    priorityLow = document.createElement("div");
 
     priorityHigh.classList.add("priorityHigh", "priorityRow");
     priorityMid.classList.add("priorityMid", "priorityRow");
     priorityLow.classList.add("priorityLow", "priorityRow");
+
+    priorityHigh.setAttribute("id", "priorityHigh")
+    priorityMid.setAttribute("id", "priorityMid")
+    priorityLow.setAttribute("id", "priorityLow")
 
     const priorityHighTitle = document.createElement("div");
     const priorityMidTitle = document.createElement("div");
