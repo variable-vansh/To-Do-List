@@ -1,12 +1,69 @@
 .projectCard {
     height: 90%;
     width: 20%;
-    background-color: black;
+    background-color: #F6EACB;
+    border: 4px solid #C5705D;
     border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
 }
 
 .priorityRow {
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+
+.projectName,
+.lowerButtons {
+    height: 20%;
+    width: 100%;
+    border-radius: 5px 5px 0px 0px;
+    background-color: #e7c773;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    font-size: 50%;
+}
+
+.lowerButtons {
+    height: 30%;
+    background-color: #F6EACB;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.editProjectCardBtn,
+.dueDateOnCard {
+    height: 70%;
+    width: 30%;
+    background-color: #e7c773;
+    border-radius: 20px;
+    border: 3px solid #C5705D;
+}
+
+.editProjectCardBtn,
+.dueDateOnCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.editProjectCardBtn:hover,
+.dueDateOnCard:hover {
+    background-color: #f3e4bb;
+}
+
+.editCardIcon {
+    height: 80%;
+}
+
+.dueDateOnCard {
+    width: 40%;
+    font-size: 70%;
 }

@@ -25,7 +25,7 @@ function createHomeContent(content) {
     priorityLowTitle.classList.add("priorityLowTitle", "priorityRowTitle");
 
     priorityHighTitle.innerText = "Priority High"
-    priorityMidTitle.innerText = "Priority Mid"
+    priorityMidTitle.innerText = "Priority: Mid"
     priorityLowTitle.innerText = "Priority Low"
 
     content.appendChild(priorityHighTitle);

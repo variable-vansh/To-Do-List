@@ -4,7 +4,7 @@ import { createHomeContent } from "./homeContent.js"
 import { createNewProject } from "./saveNewProject.js"
 import { makeCard } from "./createProjectCard.js";
 import { highPriorityProjectArray, midPriorityProjectsArray, lowPriorityProjectsArray } from "./saveNewProject.js"
-
+let projectCard
 
 let projectName, projectPriority, projectDueDate;
 
@@ -76,7 +76,6 @@ function createProjectInputBox() {
 
         //load saved project cards on the home content page
         loadSavedProjectCards()
-
     });
 }
 
@@ -200,7 +199,6 @@ function redirectToHomeContent() {
 
     document.body.appendChild(content);
 
-
     //create Home page content
     createHomeContent(content);
 }
@@ -223,24 +221,8 @@ function loadSavedProjectCards() {
     let priorityMid = document.getElementById("priorityMid");
     let priorityLow = document.getElementById("priorityLow");
 
-    for (let project of highPriorityProjectArray) {
-        let projectCard = document.createElement("div");
-        projectCard.classList.add("projectCard");
-        priorityHigh.appendChild(projectCard)
-    }
 
-    for (let project of midPriorityProjectsArray) {
-        let projectCard = document.createElement("div");
-        projectCard.classList.add("projectCard");
-        priorityMid.appendChild(projectCard)
-    }
-
-    for (let project of lowPriorityProjectsArray) {
-        let projectCard = document.createElement("div");
-        projectCard.classList.add("projectCard");
-        priorityLow.appendChild(projectCard)
-    }
-
+    makeCard()
 }
 
 export { newProjectInput }
