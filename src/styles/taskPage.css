@@ -1,0 +1,165 @@
+.taskPageParent {
+    height: 80vh;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+
+    font-family: "logoTitleFont", sans-serif;
+    font-size: 30px;
+    text-align: center;
+}
+
+.taskInputBox {
+    height: 500px;
+    width: 600px;
+    background-color: #F6EACB;
+    border: 6px solid #C5705D;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.taskPageButtons>button {
+    height: 80px;
+    width: 200px;
+
+    font-size: 30px;
+    font-family: "logoTitleFont", sans-serif;
+
+    margin: 40px 80px;
+    border-radius: 10px;
+
+    border: 5px solid black
+}
+
+.taskPageButtons {
+    display: flex;
+    flex-direction: column;
+}
+
+.saveTaskPage {
+    background-color: #83B4FF;
+}
+
+.saveTaskPage:hover {
+    background-color: #b2d1FF;
+}
+
+.discardTaskPage {
+    background-color: #FFA8A8;
+}
+
+.discardTaskPage:hover {
+    background-color: #FFc8c8;
+}
+
+.deleteProject {
+    background-color: #f1ff73;
+}
+
+.deleteProject:hover {
+    background-color: #fbffd9;
+}
+
+.projectTitleOnTaskPage {
+    height: 15%;
+    width: 100%;
+    background-color: #e7c773;
+    border-radius: 12px 12px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.taskPageFooter {
+    width: 100%;
+    height: 15%;
+    /* background-color: #e7c773; */
+    border-radius: 0px 0px 12px 12px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.newTaskSection {
+    width: 100%;
+    height: 25%;
+    background-color: #83B4FF;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.listOfTasks {
+    width: 100%;
+    height: 45%;
+}
+
+.priorityOnTaskPage,
+.dueDateOnTaskPage {
+    height: 60%;
+    width: 30%;
+    background-color: #e7c773;
+    border-radius: 20px;
+    border: 3px solid #C5705D;
+
+    font-size: 19px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dueDateOnTaskPage {
+    width: 40%;
+}
+
+.taskInputCurvedBorder {
+    height: 85%;
+    width: 80%;
+    background-color: #b2d1FF;
+    border-radius: 10px;
+    margin-right: 1%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.newTaskHeader {
+    padding-left: 1%;
+}
+
+.newTaskTitle {
+    height: 25%;
+    width: 80%;
+    border-radius: 10px;
+
+    font-family: "logoTitleFont", sans-serif;
+    font-size: 15px;
+    text-align: center;
+
+    border: none;
+}
+
+.newTaskDescription {
+    height: 50%;
+    width: 80%;
+    border-radius: 10px;
+
+    font-family: "logoTitleFont", sans-serif;
+    font-size: 14px;
+    text-align: center;
+
+    border: none
+}
+
+input:focus {
+    outline: none;
+}

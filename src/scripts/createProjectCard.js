@@ -3,9 +3,6 @@ import { highPriorityProjectArray, midPriorityProjectsArray, lowPriorityProjects
 import "./newProjectTab.js"
 import { taskPage } from "./taskPage.js"
 
-
-
-
 function makeCard() {
     for (let project of highPriorityProjectArray) {
         let projectCard = document.createElement("div");
@@ -62,8 +59,12 @@ function commonStyleForAllCards(projectCard, project) {
     lowerButtons.appendChild(dueDateOnCard)
 
     //edit button event listener
-    editProjectCardBtn.addEventListener("click", taskPage)
+    editProjectCardBtn.addEventListener("click", function () {
+        taskPage(project)
+    })
 }
+
+
 
 
 

@@ -6,13 +6,27 @@ let lowPriorityProjectsArray = []
 //one big array, idk when this will be used, so made it in advance
 let allProjects = []
 
+let uniqueProjectNumber = 0;
+
 //new project
 class Project {
+    static allProjects = [];
+
     //takes in task Array
     constructor(projectName, projectPriority, projectDueDate) {
         this.projectName = projectName;
         this.projectPriority = projectPriority
         this.projectDueDate = projectDueDate
+        this.uniqueProjectNumber = ++uniqueProjectNumber;
+    }
+
+    static getProjectByNumber(number) {
+        return Project.allProjects.find(project => project.uniqueProjectNumber === number);
+    }
+
+    //maybe something needs to go here for delete project button to work
+    //will look at this later
+    deleteProject() {
     }
 }
 

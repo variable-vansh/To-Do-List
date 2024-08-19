@@ -54,8 +54,7 @@
     align-items: center;
 }
 
-.editProjectCardBtn:hover,
-.dueDateOnCard:hover {
+.editProjectCardBtn:hover {
     background-color: #f3e4bb;
 }
 
