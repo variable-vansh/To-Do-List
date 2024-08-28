@@ -17,17 +17,26 @@ class Project {
         this.projectName = projectName;
         this.projectPriority = projectPriority
         this.projectDueDate = projectDueDate
+        this.taskArray = [];
+
+        //i thought this is some dank stuff, didn't turn out to be any useful, up until now
         this.uniqueProjectNumber = ++uniqueProjectNumber;
     }
 
-    static getProjectByNumber(number) {
-        return Project.allProjects.find(project => project.uniqueProjectNumber === number);
+    //add new task to the task Array of project
+    addTaskToArray(task) {
+        this.taskArray.push(task)
     }
+
+    // static getProjectByNumber(number) {
+    //     return Project.allProjects.find(project => project.uniqueProjectNumber === number);
+    // }
 
     //maybe something needs to go here for delete project button to work
     //will look at this later
-    deleteProject() {
-    }
+    //29-8-24 lol
+    // deleteProject() {
+    // }
 }
 
 function createNewProject(projectName, projectPriority, projectDueDate) {

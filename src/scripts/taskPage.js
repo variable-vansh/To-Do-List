@@ -7,7 +7,10 @@ import { makeCard } from "./createProjectCard.js";
 import { highPriorityProjectArray, midPriorityProjectsArray, lowPriorityProjectsArray } from "./saveNewProject.js"
 
 
+import { createNewTask } from "./saveNewTask.js";
+
 let currentProjectName = ""
+// let taskTitle;
 
 function taskPage(project) {
     //remove home content stuff
@@ -32,14 +35,12 @@ function taskPage(project) {
     let discardTaskPage = document.createElement("button")
     let deleteProject = document.createElement("button")
 
-
     saveTaskPage.classList.add("saveTaskPage")
     discardTaskPage.classList.add("discardTaskPage")
     deleteProject.classList.add("deleteProject")
 
-
     saveTaskPage.innerText = "SAVE";
-    discardTaskPage.innerText = "DISCARD"
+    discardTaskPage.innerText = "RETURN TO HOME"
     deleteProject.innerText = "DELETE PROJECT"
 
     discardTaskPage.addEventListener("click", function () {
@@ -139,6 +140,28 @@ function taskPage(project) {
         redirectToHomeContent();
         loadSavedProjectCards();
     });
+
+    //make save button work
+    saveTaskPage.addEventListener("click", function () {
+
+        //get task title and description to be sent over to create new task
+        let taskTitle = document.querySelector(".newTaskTitle").value;
+        let taskDescription = document.querySelector(".newTaskDescription").value
+
+        // console.log(taskTitle)
+        // console.log(taskDescription)
+
+        //create new task
+        createNewTask(taskTitle, taskDescription, project)
+
+        //empty the new task input elements
+        document.querySelector(".newTaskTitle").value = ""
+        document.querySelector(".newTaskDescription").value = ""
+
+        //put the new task up on the task section on the same page
+    })
+
+
 
 }
 
