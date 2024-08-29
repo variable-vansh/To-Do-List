@@ -1,0 +1,87 @@
+.listOfTasks {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.taskCard {
+    width: 95%;
+    height: 22%;
+
+    /* border: 10px solid rosybrown; */
+    background-color: #C5705D;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: 28px;
+    padding: 5px
+        /* border-radius: 20px; */
+
+}
+
+.checkMarkSection {
+    height: 80%;
+    width: 7%;
+    background-color: #e7c773;
+    border-radius: 28px
+}
+
+.checkMarkSection:hover {
+    background-color: #F6EACB;
+}
+
+.titleSection {
+    height: 100%;
+    width: 30%;
+    background-color: #F6EACB;
+
+    border-radius: 5px;
+
+    font-size: 70%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 10%; */
+
+    flex: 1;
+    box-sizing: border-box;
+}
+
+.descriptionSection {
+    height: 100%;
+    width: 56%;
+    background-color: #F6EACB;
+
+    border-radius: 5px;
+
+    font-size: 50%;
+    font-weight: 100;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+}
+
+.deleteTaskSections {
+    height: 80%;
+    width: 7%;
+    background-color: #e7c773;
+
+    border-radius: 28px
+}
+
+.deleteTaskSections:hover {
+    background-color: #F6EACB;
+}
+
+.deleteTaskIcon {
+    height: 80%;
+    width: 80%;
+}

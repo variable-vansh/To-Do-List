@@ -1,5 +1,7 @@
 // this is kindof a replica of saveNewProject.js
 
+import { displayTaskArray } from "./displayTasksOnProjectPage"
+
 
 //class Task
 class Task {
@@ -16,6 +18,8 @@ function createNewTask(taskTitle, taskDescription, project) {
 
     // prints out all the tasks in the current array
     // console.log(project.taskArray)
+
+    displayTaskArray(project)
 }
 
 export {

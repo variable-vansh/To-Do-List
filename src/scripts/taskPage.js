@@ -1,4 +1,5 @@
 import "../styles/taskPage.css"
+import { displayTaskArray } from "./displayTasksOnProjectPage"
 
 import "./newProjectTab.js"
 import { createHomeContent } from "./homeContent.js"
@@ -141,6 +142,7 @@ function taskPage(project) {
         loadSavedProjectCards();
     });
 
+    //save button works only when there is something in the input field
     //make save button work
     saveTaskPage.addEventListener("click", function () {
 
@@ -151,8 +153,14 @@ function taskPage(project) {
         // console.log(taskTitle)
         // console.log(taskDescription)
 
-        //create new task
-        createNewTask(taskTitle, taskDescription, project)
+        if (taskTitle != '' && taskDescription != '') {
+            //create new task
+            createNewTask(taskTitle, taskDescription, project)
+        }
+
+        if (taskTitle == '' && taskDescription == '') {
+            alert("Fill in new task details to save")
+        }
 
         //empty the new task input elements
         document.querySelector(".newTaskTitle").value = ""
@@ -160,6 +168,10 @@ function taskPage(project) {
 
         //put the new task up on the task section on the same page
     })
+
+
+
+    displayTaskArray(project)
 
 
 
@@ -189,5 +201,6 @@ function loadSavedProjectCards() {
 
     makeCard()
 }
+
 
 export { taskPage }
