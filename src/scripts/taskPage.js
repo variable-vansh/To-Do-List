@@ -159,7 +159,7 @@ function taskPage(project) {
         }
 
         if (taskTitle == '' && taskDescription == '') {
-            alert("Fill in new task details to save")
+
         }
 
         //empty the new task input elements

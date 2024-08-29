@@ -3,6 +3,9 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+
+    overflow: auto;
+    /* flex-shrink: 0; */
 }
 
 .taskCard {
@@ -67,6 +70,8 @@
     align-items: center;
 
     box-sizing: border-box;
+
+    overflow-x: auto;
 }
 
 .deleteTaskSections {

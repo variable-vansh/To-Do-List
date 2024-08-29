@@ -40,6 +40,18 @@ function commonStyleForAllCards(projectCard, project) {
     projectName.innerText = project.projectName
     projectCard.appendChild(projectName)
 
+    let taskListOnProjectCard = document.createElement("div")
+    taskListOnProjectCard.classList.add("taskListOnProjectCard")
+    projectCard.appendChild(taskListOnProjectCard)
+
+    for (let task of project.taskArray) {
+        let taskTitleBar = document.createElement("div")
+        taskTitleBar.classList.add("taskTitleBar")
+        taskListOnProjectCard.appendChild(taskTitleBar)
+
+        taskTitleBar.innerText = task.taskTitle
+    }
+
     let lowerButtons = document.createElement("div")
     lowerButtons.classList.add("lowerButtons")
     projectCard.appendChild(lowerButtons)
