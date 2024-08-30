@@ -2,6 +2,10 @@
 
 import { displayTaskArray } from "./displayTasksOnProjectPage"
 
+//new stuff
+import localStorageManager from './localStorageManager.js';
+import { highPriorityProjectArray, midPriorityProjectsArray, lowPriorityProjectsArray } from "./saveNewProject.js";
+
 
 //class Task
 class Task {
@@ -20,6 +24,9 @@ function createNewTask(taskTitle, taskDescription, project) {
     // console.log(project.taskArray)
 
     displayTaskArray(project)
+
+    //new stuff
+    localStorageManager.saveProjects(highPriorityProjectArray, midPriorityProjectsArray, lowPriorityProjectsArray);
 }
 
 export {

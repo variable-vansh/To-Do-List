@@ -7,8 +7,10 @@ import { makeCard } from "./createProjectCard.js";
 // import { highPriorityProjectArray } from "./saveNewProject.js";
 import { highPriorityProjectArray, midPriorityProjectsArray, lowPriorityProjectsArray } from "./saveNewProject.js"
 
-
 import { createNewTask } from "./saveNewTask.js";
+
+///new stuff
+import localStorageManager from './localStorageManager.js';
 
 let currentProjectName = ""
 // let taskTitle;
@@ -140,6 +142,9 @@ function taskPage(project) {
 
         redirectToHomeContent();
         loadSavedProjectCards();
+
+        //new stuff
+        localStorageManager.saveProjects(highPriorityProjectArray, midPriorityProjectsArray, lowPriorityProjectsArray);
     });
 
     //save button works only when there is something in the input field

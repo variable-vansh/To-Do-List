@@ -4,6 +4,20 @@
 import { createHeader } from "./scripts/homeHeader"
 import { createHomeContent } from "./scripts/homeContent"
 
+//new stuff
+import localStorageManager from '../src/scripts/localStorageManager.js';
+import { highPriorityProjectArray, midPriorityProjectsArray, lowPriorityProjectsArray } from "./scripts/saveNewProject.js";
+
+//new stuff
+import { makeCard } from "./scripts/createProjectCard.js";
+
+
+//new stuff
+const savedProjects = localStorageManager.loadProjects();
+highPriorityProjectArray.push(...savedProjects.high);
+midPriorityProjectsArray.push(...savedProjects.mid);
+lowPriorityProjectsArray.push(...savedProjects.low);
+
 //create content element
 const content = document.createElement("div");
 content.classList.add("content");
@@ -18,78 +32,84 @@ document.body.appendChild(content);
 //create Home page content
 createHomeContent(content);
 
-//creates tasks
-class Task {
-    constructor(title, description, dueDate, priority) {
-        this.title = title;
-        this.description = description;
-        this.dueDate = dueDate;
-        this.priority = priority;
-        this.taskNumber = ++Task.taskCounter;
-    }
-
-    // shows up task in console
-    viewTasks() {
-        console.log(`Task number: ${this.taskNumber}`);
-        console.log(`Title: ${this.title}`);
-        console.log(`Description: ${this.description}`);
-        console.log(`Due Date: ${this.dueDate}`);
-        console.log(`Priority: ${this.priority}`);
-    }
-
-    //resets tasks counter to 0
-    static resetTaskCounter() {
-        Task.taskCounter = 0;
-    }
+function loadSavedProjectCards() {
+    makeCard();
 }
 
-// initialize counter to be 0
-Task.taskCounter = 0;
+loadSavedProjectCards()
 
-//create projects
-class Project {
-    //takes in task Array
-    constructor(tasks, projectName) {
-        // creates a copy of tasks array and keeps it
-        this.tasks = [...tasks];
-        this.projectNumber = ++Project.projectCounter;
-        this.projectName = projectName;
-    }
+// //creates tasks
+// class Task {
+//     constructor(title, description, dueDate, priority) {
+//         this.title = title;
+//         this.description = description;
+//         this.dueDate = dueDate;
+//         this.priority = priority;
+//         this.taskNumber = ++Task.taskCounter;
+//     }
 
-    //show up projects in console
-    viewProject() {
-        console.log(`Project-${this.projectName}`);
-        //run a loop for each task in the tasks array ('twas created in the constructor, as a copy of the tasks array)
-        this.tasks.forEach(task => task.viewTasks());
-        console.log("-------------------------------------");
-    }
+//     // shows up task in console
+//     viewTasks() {
+//         console.log(`Task number: ${this.taskNumber}`);
+//         console.log(`Title: ${this.title}`);
+//         console.log(`Description: ${this.description}`);
+//         console.log(`Due Date: ${this.dueDate}`);
+//         console.log(`Priority: ${this.priority}`);
+//     }
 
-    //takes in a new task and pushes it into this projects array that is a collection of tasks in this project
-    addTaskToProject(newTask) {
-        this.tasks.push(newTask);
-    }
-}
+//     //resets tasks counter to 0
+//     static resetTaskCounter() {
+//         Task.taskCounter = 0;
+//     }
+// }
 
-Project.projectCounter = 0;
+// // initialize counter to be 0
+// Task.taskCounter = 0;
 
-//parent, single biggest collection of projects
-class ProjectCollection {
-    //takes in array of projects
-    constructor(projects) {
-        //stores up an array, an array of all projects
-        this.projects = projects;
-    }
+// //create projects
+// class Project {
+//     //takes in task Array
+//     constructor(tasks, projectName) {
+//         // creates a copy of tasks array and keeps it
+//         this.tasks = [...tasks];
+//         this.projectNumber = ++Project.projectCounter;
+//         this.projectName = projectName;
+//     }
 
-    //loops over all projects and shows them up
-    viewProjectCollection() {
-        this.projects.forEach(project => project.viewProject());
-    }
+//     //show up projects in console
+//     viewProject() {
+//         console.log(`Project-${this.projectName}`);
+//         //run a loop for each task in the tasks array ('twas created in the constructor, as a copy of the tasks array)
+//         this.tasks.forEach(task => task.viewTasks());
+//         console.log("-------------------------------------");
+//     }
 
-    //takes in a new project object, and adds it to the array of all projects
-    addNewProjectToCollection(newProject) {
-        this.projects.push(newProject);
-    }
-}
+//     //takes in a new task and pushes it into this projects array that is a collection of tasks in this project
+//     addTaskToProject(newTask) {
+//         this.tasks.push(newTask);
+//     }
+// }
+
+// Project.projectCounter = 0;
+
+// //parent, single biggest collection of projects
+// class ProjectCollection {
+//     //takes in array of projects
+//     constructor(projects) {
+//         //stores up an array, an array of all projects
+//         this.projects = projects;
+//     }
+
+//     //loops over all projects and shows them up
+//     viewProjectCollection() {
+//         this.projects.forEach(project => project.viewProject());
+//     }
+
+//     //takes in a new project object, and adds it to the array of all projects
+//     addNewProjectToCollection(newProject) {
+//         this.projects.push(newProject);
+//     }
+// }
 
 //initialize task array
 // let taskArray = [];

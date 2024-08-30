@@ -1,3 +1,6 @@
+//new stuff
+import localStorageManager from '../scripts/localStorageManager.js';
+
 //created 3 arrays for 3 priorities
 let highPriorityProjectArray = []
 let midPriorityProjectsArray = []
@@ -50,6 +53,10 @@ function createNewProject(projectName, projectPriority, projectDueDate) {
     if (projectPriority == "low") {
         lowPriorityProjectsArray.push(new Project(projectName, projectPriority, projectDueDate))
     }
+
+    //new stuff
+    localStorageManager.saveProjects(highPriorityProjectArray, midPriorityProjectsArray, lowPriorityProjectsArray);
+
     //create new project with inputs and store it into an array
 
     // console.log(highPriorityProjectArray)
